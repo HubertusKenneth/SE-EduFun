@@ -1,0 +1,26 @@
+# fly.toml app configuration file generated for edufun-db on 2025-06-15T20:34:43+07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'edufun-db'
+primary_region = 'sin'
+
+[build]
+  dockerfile = 'Dockerfile'
+
+[env]
+  MYSQL_DATABASE = 'edufun'
+  MYSQL_USER = 'non_root_user'
+
+[processes]
+  app = '--datadir /data/mysql'
+
+[[mounts]]
+  source = 'mysqldata'
+  destination = '/data'
+
+[[vm]]
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 2048
