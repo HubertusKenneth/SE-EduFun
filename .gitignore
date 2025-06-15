@@ -1,4 +1,4 @@
 .DS_Store
-/src/admin/uploads/
+# /src/admin/uploads/
 **/*.env*
 
