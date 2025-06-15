@@ -20,6 +20,8 @@
 									url: "login.php",
 									data: formData,
 									success: function(html){
+									html = html.trim();
+									
 									if(html=='true')
 									{
 									$.jGrowl("Loading File Please Wait......", { sticky: true });

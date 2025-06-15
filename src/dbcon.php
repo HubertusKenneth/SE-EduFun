@@ -20,7 +20,7 @@ if (!$host) {
 }
 $user = $user ?: 'root';
 $pass = $pass ?: '';
-$conn = mysqli_connect($host, $user, $pass, $db) or die('[db-service] MySQL connect error: ' . mysqli_connect_error());
+$conn = mysqli_connect($host, $user, $pass, $db) or die('[web-app] MySQL connect error: ' . mysqli_connect_error());
 ?>
 
 
