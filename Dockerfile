@@ -9,10 +9,9 @@ RUN docker-php-ext-install mysqli pdo_mysql
 
 RUN a2enmod headers rewrite
 
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+RUN echo "ServerName 127.0.0.1" > /etc/apache2/conf-available/servername.conf && a2enconf servername
 
-# Copy DB and entry script
-COPY ./db/edufun.sql /tmp/edufun.sql
+# Copy entrypoint script
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
@@ -26,7 +25,7 @@ RUN a2enconf cors
 WORKDIR /var/www/html
 COPY ./src/ /var/www/html/
 
-# Change default port
+# Configured port for fly
 EXPOSE 8080
 RUN sed -i 's/80/8080/g' /etc/apache2/ports.conf /etc/apache2/sites-enabled/000-default.conf
 

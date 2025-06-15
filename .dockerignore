@@ -16,3 +16,6 @@ src/admin/vendors/flot/**/node_modules
 # flyctl launch added from src/admin/vendors/jGrowl/.gitignore
 src/admin/vendors/jGrowl/**/.DS_Store
 fly.toml
+
+.DS_Store
+/src/admin/uploads/

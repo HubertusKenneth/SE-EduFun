@@ -1,31 +1,26 @@
-# fly.toml app configuration file generated for edufun-db on 2025-06-15T17:18:41+07:00
+# fly.toml app configuration file generated for edufun-db on 2025-06-15T20:34:43+07:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "edufun-db"
-primary_region = "sin"
+app = 'edufun-db'
+primary_region = 'sin'
 
 [build]
-  image = "mysql:8.0.37"
-
-[[vm]]
-  memory_mb = 2048
-  cpu_kind = "shared"
-  cpus = 1
-
-[[mounts]]
-  source = "mysqldata"
-  destination = "/data"
+  dockerfile = 'Dockerfile'
 
 [env]
-  MYSQL_DATABASE = "edufun"
-  MYSQL_USER = "non_root_user"
+  MYSQL_DATABASE = 'edufun'
+  MYSQL_USER = 'non_root_user'
 
 [processes]
-  app = """--datadir /data/mysql \
-    --default-authentication-plugin mysql_native_password"""
-# Uncomment and use the following for 8.4:
-#  app = """--datadir /data/mysql \
-#    --mysql-native-password=ON"""
+  app = '--datadir /data/mysql'
 
+[[mounts]]
+  source = 'mysqldata'
+  destination = '/data'
+
+[[vm]]
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 2048
