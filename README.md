@@ -12,3 +12,6 @@ This project is an **Learning Management System** built using **PHP** and **MySQ
   - Student: Join courses and view content
 - **Enrollment System**: Track student progress in courses
 - **Responsive UI**: Built using HTML, CSS, and Bootstrap
+
+## Deployment
+www.mock.com
