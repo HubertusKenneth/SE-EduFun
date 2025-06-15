@@ -1,0 +1,18 @@
+# flyctl launch added from src/admin/vendors/bootstrap-wysihtml5/.gitignore
+src/admin/vendors/bootstrap-wysihtml5/**/.DS_Store
+src/admin/vendors/bootstrap-wysihtml5/**/.c9revisions
+src/admin/vendors/bootstrap-wysihtml5/*.project
+
+# flyctl launch added from src/admin/vendors/bootstrap-wysihtml5/.settings/.gitignore
+src/admin/vendors/bootstrap-wysihtml5/.settings/*.jsdtscope
+src/admin/vendors/bootstrap-wysihtml5/.settings/*.eclipse.wst.jsdt.ui.superType.container
+src/admin/vendors/bootstrap-wysihtml5/.settings/*.eclipse.wst.jsdt.ui.superType.name
+
+# flyctl launch added from src/admin/vendors/flot/.gitignore
+src/admin/vendors/flot/**/*.min.js
+!src/admin/vendors/flot/**/excanvas.min.js
+src/admin/vendors/flot/**/node_modules
+
+# flyctl launch added from src/admin/vendors/jGrowl/.gitignore
+src/admin/vendors/jGrowl/**/.DS_Store
+fly.toml
