@@ -2,63 +2,65 @@
 
 class DbConnector {
 
-var $theQuery;
-var $link;
-    
+    var $theQuery;
+    var $link;
+
     public function __construct() {
         ob_start();
-  // Get the main settings from the array we just loaded
-        $host = 'localhost';
-        $db = 'edufun';
-        $user = 'root';
-        $pass = '';
-
-        // Connect to the database
-        $this->link = mysqli_connect($host, $user, $pass,$db);
-
+        $this->connect();
     }
+
     function __destruct() {
-        // var_dump($this->link);
         mysqli_close($this->link);
         ob_end_flush();
     }
-function DbConnector(){
 
-        // Get the main settings from the array we just loaded
-        $host = 'localhost';
-        $db = 'edufun';
-        $user = 'root';
-        $pass = '';
-
-        // Connect to the database
-        $this->link = mysqli_connect($host, $user, $pass,$db);
-        // register_shutdown_function(array(&$this, 'close'));
+    function DbConnector() {
+        $this->connect();
         return $this->link;
-
     }
-	
-  //*** Function: query, Purpose: Execute a database query ***
+
+    private function connect() {
+        $mode = getenv('MODE') ?: 'local';
+
+        switch ($mode) {
+            case 'prod':
+                $host = 'edufun-db.internal';
+                $user = getenv('DB_USER') ?: 'non_root_user';
+                $pass = getenv('DB_PASS') ?: '';
+                break;
+
+            case 'staging':
+                $host = '127.0.0.1';
+                $user = getenv('DB_USER') ?: 'root';
+                $pass = getenv('DB_PASS') ?: '';
+                break;
+
+            case 'local':
+            default:
+                $host = 'localhost';
+                $user = getenv('DB_USER') ?: 'root';
+                $pass = getenv('DB_PASS') ?: '';
+                break;
+        }
+
+        $db = getenv('DB_NAME') ?: 'edufun';
+
+        $this->link = mysqli_connect($host, $user, $pass, $db);
+    }
+
     function query($query) {
-
         $this->theQuery = $query;
-        return mysqli_query($this->link,$query);
-
+        return mysqli_query($this->link, $query);
     }
 
-    //*** Function: fetchArray, Purpose: Get array of query results ***
     function fetchArray($result) {
-
         return mysqli_fetch_array($result);
-
     }
 
-    //*** Function: close, Purpose: Close the connection ***
     function close() {
-
         mysqli_close($this->link);
-
     }
-	
 }
-
 ?>
+
