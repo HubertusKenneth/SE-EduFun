@@ -1,6 +1,6 @@
 <?php
-include('admin/dbcon.php');
 include('session.php');
+include('admin/dbcon.php');
 if (isset($_POST['read'])){
 $id=$_POST['selector'];
 $N = count($id);

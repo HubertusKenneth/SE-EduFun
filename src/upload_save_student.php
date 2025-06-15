@@ -1,5 +1,4 @@
 <?php
-
 include('session.php');
 //Include database connection details
 require("opener_db.php");

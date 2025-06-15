@@ -1,5 +1,5 @@
-<?php include('header_dashboard.php'); ?>
 <?php include('session.php'); ?>
+<?php include('header_dashboard.php'); ?>
 <style>
     html, body {
         height: 100%;

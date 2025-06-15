@@ -1,5 +1,5 @@
-<?php include('header_dashboard.php'); ?>
 <?php include('session.php'); ?>
+<?php include('header_dashboard.php'); ?>
 <?php $get_id = $_GET['id']; ?>
 <?php $subject_id = $_GET['subject_id']; ?>
     <body>

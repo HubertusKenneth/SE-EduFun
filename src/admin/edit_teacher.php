@@ -1,5 +1,5 @@
-<?php include('header.php'); ?>
 <?php include('session.php'); ?>
+<?php include('header.php'); ?>
 <?php $get_id = $_GET['id']; ?>
     <body>
 		<?php include('navbar.php'); ?>

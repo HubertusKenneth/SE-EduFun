@@ -1,6 +1,6 @@
 <?php
-include('dbcon.php');
 include('session.php');
+include('dbcon.php');
 
 $sql = mysqli_query($conn,"SELECT * FROM student_class_quiz WHERE student_id = '$session_id'")or die(mysqli_error());
 $row = mysqli_fetch_array($sql);

@@ -1,5 +1,5 @@
-<?php include('header_dashboard.php'); ?>
 <?php include('session.php'); ?>
+<?php include('header_dashboard.php'); ?>
 <body>
 		<?php include('navbar_student.php'); ?>
         <div class="container-fluid">

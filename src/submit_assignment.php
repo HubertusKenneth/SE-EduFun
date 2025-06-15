@@ -1,5 +1,5 @@
-<?php include('header_dashboard.php'); ?>
 <?php include('session.php'); ?>
+<?php include('header_dashboard.php'); ?>
 <?php $get_id = $_GET['id']; ?>
 <?php 
 	  $post_id = $_GET['post_id'];
@@ -11,7 +11,7 @@
 	  <?php
 	  }
 	
- ?>
+?>
     <body id="studentTableDiv">
 		<?php include('navbar_student.php'); ?>
         <div class="container-fluid">
