@@ -17,6 +17,6 @@ src/admin/vendors/flot/**/node_modules
 src/admin/vendors/jGrowl/**/.DS_Store
 fly.toml
 
-mysql/
+mysql/*
 .DS_Store
 # /src/admin/uploads/

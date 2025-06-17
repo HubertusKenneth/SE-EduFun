@@ -24,7 +24,7 @@ if ($count > 0) {
     echo 'true';
     mysqli_query(
         $conn,
-        "INSERT INTO user_log (username, login_date, user_id) VALUES('{$username}', NOW(), {$row['user_id']})") or die(mysqli_error($conn));
+        "INSERT INTO user_log (username, login_date, logout_date, user_id) VALUES('{$username}', NOW(), '', {$row['user_id']})") or die(mysqli_error($conn));
 } else {
     echo 'false';
 }
