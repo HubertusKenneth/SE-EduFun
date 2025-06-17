@@ -1215,7 +1215,6 @@ CREATE TABLE `user_log` (
   `login_date` DATETIME NOT NULL,
   `logout_date` DATETIME NOT NULL,
   `user_id` INT(11) NOT NULL,
-  PRIMARY KEY (`user_log_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
