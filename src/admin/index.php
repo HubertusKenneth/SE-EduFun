@@ -19,17 +19,14 @@
 						url: "login.php",
 						data: formData,
 						success: function(html){
-						if(html=='true')
-						{
-						$.jGrowl("Welcome to EduFun", { header: 'Access Granted' });
-						var delay = 2000;
-							setTimeout(function(){ window.location = 'dashboard.php'  }, delay);  
+  							if(html.trim() == 'true') {
+    							$.jGrowl("Welcome to EduFun", { header: 'Access Granted' });
+    							setTimeout(function(){ window.location = 'dashboard.php'; }, 2000);
+  							} else {
+   								$.jGrowl("Please Check your username and Password", { header: 'Login Failed' });
+  							}
 						}
-						else
-						{
-						$.jGrowl("Please Check your username and Password", { header: 'Login Failed' });
-						}
-						}
+
 						
 					});
 					return false;
@@ -38,7 +35,6 @@
 			</script>
 
 		
-
 
     </div> <!-- /container -->
 <?php include('script.php'); ?>
