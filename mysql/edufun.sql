@@ -706,7 +706,7 @@ CREATE TABLE `teacher` (
 --
 
 INSERT INTO `teacher` (`teacher_id`, `username`, `password`, `firstname`, `lastname`, `department_id`, `location`, `about`, `teacher_status`, `teacher_stat`) VALUES
-(21, 'eftee', 'felice123', 'Felice', 'Tania', 11, 'uploads/NO-IMAGE-AVAILABLE.jpg', '', 'Registered', '');
+(21, 'eftea', 'felice123', 'Felice', 'Tania', 11, 'uploads/NO-IMAGE-AVAILABLE.jpg', '', 'Registered', '');
 
 -- --------------------------------------------------------
 
@@ -1213,8 +1213,8 @@ CREATE TABLE `user_log` (
   `user_log_id` INT(11) NOT NULL,
   `username` VARCHAR(25) NOT NULL,
   `login_date` DATETIME NOT NULL,
-  `logout_date` DATETIME NOT NULL,
-  `user_id` INT(11) NOT NULL,
+  `logout_date` DATETIME NULL,
+  `user_id` INT(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
@@ -1225,10 +1225,10 @@ INSERT INTO `user_log` (`user_log_id`, `username`, `login_date`, `logout_date`, 
 (86, 'admin', '2025-06-11 23:09:40', '2025-06-12 13:36:23', 15),
 (87, 'admin', '2025-06-11 23:09:42', '2025-06-12 13:36:23', 15),
 (88, 'admin', '2025-06-12 13:16:14', '2025-06-12 13:36:23', 15),
-(89, 'admin', '2025-06-12 13:41:24', '', 15),
-(90, 'Hubertus', '2025-06-12 16:24:20', '', 16),
+(89, 'admin', '2025-06-12 13:41:24', NULL, 15),
+(90, 'Hubertus', '2025-06-12 16:24:20', NULL, 16),
 (91, 'admin', '2025-06-13 00:13:39', '2025-06-15 14:39:06', 17),
-(92, 'Hubertus', '2025-06-13 00:13:49', '', 16),
+(92, 'Hubertus', '2025-06-13 00:13:49', NULL, 16),
 (93, 'admin', '2025-06-15 14:29:05', '2025-06-15 14:39:06', 17);
 
 --

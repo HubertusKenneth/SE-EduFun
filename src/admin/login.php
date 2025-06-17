@@ -11,7 +11,7 @@ if (!$username || !$password) {
 $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
 $result = mysqli_query($conn, $query);
 if (!$result) {
-    error_log("[web-app] MySQL error (student): " . mysqli_error($conn));
+    error_log("[web-app] MySQL error (user): " . mysqli_error($conn));
     echo 'false';
     exit;
 }
@@ -21,10 +21,10 @@ $row = mysqli_fetch_array($result);
 
 if ($count > 0) {
     $_SESSION['id'] = $row['user_id'];
-    echo 'true';
     mysqli_query(
         $conn,
-        "INSERT INTO user_log (username, login_date, logout_date, user_id) VALUES('{$username}', NOW(), '', {$row['user_id']})") or die(mysqli_error($conn));
+        "INSERT INTO user_log (username, login_date, logout_date, user_id) VALUES('{$username}', NOW(), NULL, {$row['user_id']})") or die(mysqli_error($conn));
+    echo 'true';
 } else {
     echo 'false';
 }
